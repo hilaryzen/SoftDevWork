@@ -6,10 +6,12 @@ KREWES = {
 	'endymion': ['Grace', 'Nahi', 'Derek', 'Jun Tao', 'Connor', 'Jason', 'Tammy', 'Albert', 'Kazi', 'Derek', 'Brandon', 'Kenneth', 'Lauren', 'Biraj', 'Jeff', 'Jackson', 'Taejoon', 'Kevin', 'Jude', 'Sophie', 'Henry', 'Coby', 'Manfred', 'Leia', 'Ahmed', 'Winston']
 }
 
+# Print a random student's name from the team given
+# Input is a string of a team name
 def student(team):
     students = len(KREWES[team])
-    studentNum = random.randint(0, students - 1)
-    studentName = KREWES[team][studentNum]
+    studentNum = random.randint(0, students - 1) # Picks random integer
+    studentName = KREWES[team][studentNum] # Finds name at the random index
     print(studentName)
 
 student('endymion')
