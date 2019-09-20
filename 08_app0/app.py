@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/")
@@ -15,6 +15,13 @@ def hello_france():
 def hello_italy():
     print(__name__)
     return "non parlo di formaggio!"
+
+coll = [0, 1, 1, 2, 3, 5, 8]
+
+@app.route("/my_foist_template")
+def template():
+    print(__name__)
+    return render_template("first_template.html", coll = coll)
 
 if __name__ == "__main__":
     app.debug = True
