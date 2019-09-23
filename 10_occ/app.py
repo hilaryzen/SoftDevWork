@@ -1,7 +1,8 @@
 from flask import Flask, render_template
+import random
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/occupyflaskst")
 def occupations():
     print(__name__)
     f = open("occupations.csv", "r")
@@ -25,7 +26,7 @@ def occupations():
     for job in occupationsDict:
         sum += float(occupationsDict[job])
         if sum >= randomJob:
-            return job
+            return render_template("occupations.html", job = job)
 
 if __name__ == "__main__":
     app.debug = True
