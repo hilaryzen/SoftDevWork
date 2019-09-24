@@ -15,6 +15,8 @@ def occupations():
     for job in occupations:
         job = job.strip()
         jobArray = job.rsplit(',', 1)
+        if jobArray[0].find("\"") != -1:
+            jobArray[0] = jobArray[0].strip("\"")
         occupationsDict[jobArray[0]] = jobArray[1]
 
     # Pick a random float between 0 and 99.8
