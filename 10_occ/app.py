@@ -26,7 +26,7 @@ def occupations():
     for job in occupationsDict:
         sum += float(occupationsDict[job])
         if sum >= randomJob:
-            return render_template("occupations.html", job = job)
+            return render_template("occupations.html", job = job, occupations = occupationsDict)
 
 if __name__ == "__main__":
     app.debug = True

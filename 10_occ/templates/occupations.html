@@ -6,5 +6,18 @@
   <body>
     <h1>Occupations</h1>
     {{ job }}
+
+    <table>
+      <tr>
+        <th>Job Class<th>
+        <th>Percentage<th>
+      </tr>
+      {% for job in occupations %}
+        <tr>
+          <td>{{ job }}</td>
+          <td>{{ occupations[job] }}<td>
+        </tr>
+      {% endfor %}
+    </table>
   </body>
 </html>
