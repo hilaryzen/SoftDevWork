@@ -2,6 +2,11 @@
 <html>
   <head>
     <title>Random Occupations</title>
+    <style>
+      table, th, td {
+        border: 2px solid black;
+      }
+    </style>
   </head>
   <body>
     <h1><center>Randomly Selected Occupations</center></h1>
@@ -10,13 +15,13 @@
 
     <table>
       <tr>
-        <th>Job Class<th>
-        <th>Percentage<th>
+        <th>Job Class</th>
+        <th>Percentage</th>
       </tr>
       {% for job in occupations %}
         <tr>
           <td>{{ job }}</td>
-          <td>{{ occupations[job] }}<td>
+          <td>{{ occupations[job] }}</td>
         </tr>
       {% endfor %}
     </table>

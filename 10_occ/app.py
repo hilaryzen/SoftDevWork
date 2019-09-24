@@ -1,3 +1,8 @@
+# Devin Lin and Hilary Zen
+# SoftDev1 pd 2
+# K10 -- Jinja Tuning
+# 2019-9-23
+
 from flask import Flask, render_template
 import random
 app = Flask(__name__)
