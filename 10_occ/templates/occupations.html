@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Occupations</title>
+    <title>Random Occupations</title>
+    <style>
+      table, th, td {
+        border: 2px solid black;
+      }
+    </style>
   </head>
   <body>
-    <h1>Occupations</h1>
-    {{ job }}
+    <h1><center>Randomly Selected Occupations</center></h1>
+    <h3><center>Devin Lin and Hilary Zen, Period 2</center></h3>
+    Your randomly selected occupation is: {{ job }}<br><br>
+
+    <table>
+      <tr>
+        <th>Job Class</th>
+        <th>Percentage</th>
+      </tr>
+      {% for job in occupations %}
+        <tr>
+          <td>{{ job }}</td>
+          <td>{{ occupations[job] }}</td>
+        </tr>
+      {% endfor %}
+    </table>
   </body>
 </html>
