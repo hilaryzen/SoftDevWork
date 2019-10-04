@@ -41,21 +41,27 @@ def login():
 
 @app.route("/auth")
 def auth():
-	if request.args['name'] == 'hillary':
-		if request.args['password'] == 'moody':
-			session["username"] = "hillary"
-			return redirect("/welcome")
+	if "name" in request.args:
+		if request.args['name'] == 'hillary':
+			if request.args['password'] == 'moody':
+				session["username"] = "hillary"
+				return redirect("/welcome")
+			else:
+				return redirect("/login")
 		else:
 			return redirect("/login")
 	else:
-		return redirect("/login")
+		session.pop("username", None)
+		return redirect("/welcome")
 
 @app.route("/welcome")
 def welcome():
-	if session['username'] == "hillary":
-		return "You are hillary"
-	else:
-		return "You're not supposed to be here"
+	if "username" in session:
+		if session['username'] == "hillary":
+			return render_template("welcome.html", uname = session["username"])
+		else:
+			return "You're not supposed to be here"
+	return "no one is logged in go away"
 
 if __name__ == "__main__":
     app.debug = True
