@@ -6,5 +6,9 @@
 {% endblock %}
 
 {% block body %}
-  <p>You have been successfully logged in as hillary.</p>
+  you are {{uname}} <br>
+
+  <form method="GET" action="/auth">
+    <input type="submit" name="logout" value="">
+  </form>
 {% endblock %}

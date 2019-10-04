@@ -37,7 +37,9 @@ def error():
 
 @app.route("/login")
 def login():
-	return render_template("login.html")
+	if "username" in session:
+		return render_template("login.html", uname = session["username"])
+	return render_template("login.html", uname = "no one")
 
 @app.route("/auth")
 def auth():
