@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>title</title>
-  <link rel="stylesheet" href="stylesheet.css" type="text/css">
-  </head>
-  <body>
+{% extends "base.html" %}
 
+{% block head %}
+  <title>Login</title>
+  <h1>Login</h1>
+  <h4>Enter your username and password!</h4>
+{% endblock %}
+
+{% block body %}
 	  <form method="GET" action="/auth">
 	  	Name: <input type="text" name="name"> <br> <br>
       Password <input type="text" name="password"><br> <br>
 		<input type="submit">
 	  </form>
-
-  </body>
-</html>
+{% endblock %}
