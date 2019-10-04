@@ -54,9 +54,9 @@ def auth():
 @app.route("/welcome")
 def welcome():
 	if session['username'] == "hillary":
-		return "You are hillary"
+		return render_template("welcome.html")
 	else:
-		return "You're not supposed to be here"
+		return redirect("/login")
 
 if __name__ == "__main__":
     app.debug = True
