@@ -1,4 +1,5 @@
 #Joseph Yusufov, Hillary Zen, With a skeleton provided by Mr. Mykolyk
+#Team Windowwashers
 #SoftDev
 #skeleton :: SQLITE3 BASICS
 #Oct 15 2019

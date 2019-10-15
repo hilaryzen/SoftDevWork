@@ -1,4 +1,5 @@
 # Joseph Yusufov, Hillary Zen, With a skeleton provided by Mr. Mykolyk
+# Team Windowwashers
 # SoftDev
 # skeleton :: SQLITE3 BASICS
 # Oct 15 2019
@@ -18,10 +19,14 @@ c = db.cursor()  # facilitate db ops
 
 ###                 SQL QUERIES                 ###
 print_student = "SELECT * FROM student;"
-select_courses_frag = "SELECT code, mark FROM courses WHERE courses.id = %s;" 
+select_courses_frag = "SELECT code, mark FROM courses WHERE courses.id = %s;"
 add_average_value = "INSERT INTO stu_avg VALUES(%d, %f);"
+add_student = "INSERT INTO student VALUES (%s, %d, %d);"
+add_courses = "INSERT INTO courses VALUES (%s, %d, %d);"
 display_profile = "SELECT name, stu_avg.id, average FROM student, stu_avg WHERE student.id == stu_avg.id;"
 ###                END SQL QUERIES                 ###
+
+# Adding functions
 
 # populate a list with each student ID that is present in the student table
 students_toprint = c.execute(print_student)
@@ -44,7 +49,7 @@ for stu_id in ids: # for each student
         counter += 1
     if counter: # calc average for each student
         average = mark_sum / counter
-    else: average = 0    
+    else: average = 0
     # print(counter)
     # print(mark_sum)
     # print(average)
@@ -57,4 +62,3 @@ for each in profiles: # display name, id, and average
     print(each)
 db.commit() #save changes
 db.close()  #close database
-
