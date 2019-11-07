@@ -8,8 +8,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Learn Foundation</title>
 
+  <!-- Compressed CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css">
-  <link rel="stylesheet" href="css/app.css">
+
+  <!-- Compressed JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js"></script>
 
 </head>
@@ -47,6 +49,46 @@
       </div>
     </div>
   </nav>
+  <div class="login-box">
+    <div class="row collapse expanded">
+      <div class="small-12 medium-6 column small-order-2 medium-order-1">
+        <div class="login-box-form-section">
+          <h1 class="login-box-title">Sign up</h1>
+          <input class="login-box-input" type="text" name="username" placeholder="Username" />
+          <input class="login-box-input" type="email" name="email" placeholder="E-mail" />
+          <input class="login-box-input" type="password" name="password" placeholder="Password" />
+          <input class="login-box-input" type="password" name="password2" placeholder="Retype password" />
+          <input class="login-box-submit-button" type="submit" name="signup_submit" value="Sign me up" />
+        </div>
+        <div class="or">OR</div>
+      </div>
+      <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
+        <div class="login-box-social-section-inner">
+          <span class="login-box-social-headline">Sign in with<br />your social network</span>
+          <a class="login-box-social-button-facebook">Log in with facebook</a>
+          <a class="login-box-social-button-twitter">Log in with Twitter</a>
+          <a class="login-box-social-button-google">Log in with Google+</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
+  <div class="input-group plus-minus-input">
+    <div class="input-group-button">
+      <button type="button" class="button hollow circle" data-quantity="minus" data-field="quantity">
+        <i class="fa fa-minus" aria-hidden="true"></i>
+      </button>
+    </div>
+    <input class="input-group-field" type="number" name="quantity" value="0">
+    <div class="input-group-button">
+      <button type="button" class="button hollow circle" data-quantity="plus" data-field="quantity">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
+
+
 
 </body>
 </html>
