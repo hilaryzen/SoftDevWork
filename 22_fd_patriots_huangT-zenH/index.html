@@ -18,9 +18,10 @@
 </head>
 <body>
 
-  <h1 id="page-title">Foundation</h1>
+  <h1 id="page-title">Foundation Basics</h1>
+  <h4 id="page-title">Tyler Huang & Hilary Zen</h4>
 
-  <p>Foundation is a front-end framework. It comes with many different objects and classes that have already been designed, to make styling your websites much easier!</p>
+  <br><p>Foundation is a front-end framework. It comes with many different objects and classes that have already been designed, to make styling your websites much easier!</p>
 
   <p>For example, you can turn basic links into buttons by labeling them with various classes.</p>
 
@@ -35,6 +36,15 @@
 
   <p><a href="#" class="secondary button">Secondary Btn</a></p>
   <p>This button uses <code>class="secondary button"</code>.</p>
+
+  <h2>Getting Started</h2>
+
+  <p>The button classes shown above, and all of the other classes that Foundation comes with, are stored in a CSS file that you can download. However, you can start using file right away by adding <code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css"&gt;</code> in the head of your HTML file. The CDN link we use leads to the compressed version of the full CSS file.</p>
+  <p>In addition, you can add your own CSS file by adding <code>&lt;link rel="stylesheet" href="css/app.css"&gt;</code> underneath your CDN link. Creating an app.css file allows you to write your own CSS to customize your page! It also allows you to edit any pre-made elements that you want to use. If you wanted to make the success button blue instead of green, you can copy the CSS code for that class into app.css and change the color!</p>
+
+  <h2>Nav Bars</h2>
+
+  <p>These pre-styled classes are very helpful when adding navigation bars to your website! One of the most useful features of Foundation, these nav bars save you from the frustration of moving links into the correct place. The example below uses a nav tag with <code>class="top-bar topbar-responsive"</code> and places links to other pages in an unordered list.</p>
 
   <nav class="top-bar topbar-responsive">
     <div class="top-bar-title">
@@ -59,45 +69,36 @@
       </div>
     </div>
   </nav>
+
+  <br><p>This isn't the only type of nav bar; Foundation offers several different classes to pick from!</p>
+
+  <h2>Forms</h2>
+
+  <p>Using Foundation also makes styling forms much easier!</p>
+
   <div class="login-box">
     <div class="row collapse expanded">
       <div class="small-12 medium-6 column small-order-2 medium-order-1">
         <div class="login-box-form-section">
-          <h1 class="login-box-title">Sign up</h1>
+          <h4 class="login-box-title">Sign up</h4>
           <input class="login-box-input" type="text" name="username" placeholder="Username" />
           <input class="login-box-input" type="email" name="email" placeholder="E-mail" />
           <input class="login-box-input" type="password" name="password" placeholder="Password" />
           <input class="login-box-input" type="password" name="password2" placeholder="Retype password" />
           <input class="login-box-submit-button" type="submit" name="signup_submit" value="Sign me up" />
         </div>
-        <div class="or">OR</div>
-      </div>
-      <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
-        <div class="login-box-social-section-inner">
-          <span class="login-box-social-headline">Sign in with<br />your social network</span>
-          <a class="login-box-social-button-facebook">Log in with facebook</a>
-          <a class="login-box-social-button-twitter">Log in with Twitter</a>
-          <a class="login-box-social-button-google">Log in with Google+</a>
-        </div>
       </div>
     </div>
   </div>
-  <!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
-  <div class="input-group plus-minus-input">
-    <div class="input-group-button">
-      <button type="button" class="button hollow circle" data-quantity="minus" data-field="quantity">
-        <i class="fa fa-minus" aria-hidden="true"></i>
-      </button>
-    </div>
-    <input class="input-group-field" type="number" name="quantity" value="0">
-    <div class="input-group-button">
-      <button type="button" class="button hollow circle" data-quantity="plus" data-field="quantity">
-        <i class="fa fa-plus" aria-hidden="true"></i>
-      </button>
-    </div>
+
+  <br><p>However, you aren't limited to text boxes. Checkboxes, which are very difficult to design using only plain CSS, can be turned into easy-to-use switches!</p>
+
+  <div class="switch">
+    <input class="switch-input" id="exampleSwitch" type="checkbox" name="exampleSwitch">
+    <label class="switch-paddle" for="exampleSwitch">
+      <span class="show-for-sr">Download Kittens</span>
+    </label>
   </div>
-
-
 
 
 </body>
