@@ -2,6 +2,7 @@ var c = document.getElementById("slate");
 var ctx = c.getContext("2d");
 var radius = 300;
 var state = 0; //0 if stopped, 1 if true
+var id;
 
 var animateFunction = function() {
   //console.log("animate called");
@@ -9,12 +10,13 @@ var animateFunction = function() {
     render_frame();
   } else {
     state = 1;
+    render_frame();
   }
   //window.requestAnimationFrame(animateFunction);
 }
 
 var render_frame = function() {
-  window.requestAnimationFrame(render_frame);
+  id = window.requestAnimationFrame(render_frame);
   ctx.clearRect(0, 0, c.width, c.height);
   ctx.beginPath();
   ctx.fillStyle = '#FF0000';
@@ -25,7 +27,8 @@ var render_frame = function() {
 }
 
 var stopFunction = function() {
-  state = 0;
+  //state = 0;
+  window.cancelAnimationFrame(id);
 }
 
 var animate = document.getElementById("animate");
