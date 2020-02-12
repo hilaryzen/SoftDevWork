@@ -1,12 +1,13 @@
 var c = document.getElementById("slate");
 var ctx = c.getContext("2d");
-var radius = 300;
-var state = 0; //0 if stopped, 1 if true
+var radius = 20;
+var increasing = 0; //0 if increasing, 1 if decreasing
+var state = 0; //0 if stopped, 1 if running
 var id;
 
 var animateFunction = function() {
   //console.log("animate called");
-  if (state == 1) {
+  if (state) {
     render_frame();
   } else {
     state = 1;
@@ -23,7 +24,16 @@ var render_frame = function() {
   ctx.arc(300, 300, radius, 0, 2 * Math.PI);
   ctx.fill();
   ctx.stroke();
-  radius -= 1;
+  if (increasing) {
+    radius -= 1;
+  } else {
+    radius += 1;
+  }
+  if (radius < 20) {
+    increasing = 0;
+  } else if (radius > 280) {
+    increasing = 1;
+  }
 }
 
 var stopFunction = function() {
