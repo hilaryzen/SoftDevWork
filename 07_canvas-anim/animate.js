@@ -7,9 +7,7 @@ var id;
 
 var animateFunction = function() {
   //console.log("animate called");
-  if (state) {
-    render_frame();
-  } else {
+  if (!state) {
     state = 1;
     render_frame();
   }
@@ -31,13 +29,13 @@ var render_frame = function() {
   }
   if (radius < 20) {
     increasing = 0;
-  } else if (radius > 280) {
+  } else if (radius > 200) {
     increasing = 1;
   }
 }
 
 var stopFunction = function() {
-  //state = 0;
+  state = 0;
   window.cancelAnimationFrame(id);
 }
 
