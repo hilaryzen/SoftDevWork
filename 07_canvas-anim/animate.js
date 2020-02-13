@@ -6,7 +6,7 @@ var state = 0; //0 if stopped, 1 if running
 var id;
 
 var animateFunction = function() {
-  //console.log("animate called");
+  //Do not call render_frame again if state is already 1, animation will speed up
   if (!state) {
     state = 1;
     render_frame();
