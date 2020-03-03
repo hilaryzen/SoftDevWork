@@ -23,6 +23,10 @@ def findByName(name):
     for senator in col.find({"person.firstname": fname, "person.lastname": lname}):
         pprint(senator)
 
+def findParty(party):
+    for senator in col.find({"party": party}):
+        pprint(senator)
+
 def findByAge(age):
     now = datetime.datetime.now()
     for senator in senators.find({}):
