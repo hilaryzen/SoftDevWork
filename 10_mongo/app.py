@@ -23,6 +23,13 @@ def findByName(name):
     for senator in col.find({"person.firstname": fname, "person.lastname": lname}):
         pprint(senator)
 
+def findByGender(gender: str):
+	if gender is not "male" and gender is not "female":
+		pprint("please enter a valid gender")
+	else:
+		for senator in col.find({"person.gender": gender}):
+			pprint(senator)
+
 def findParty(party):
     for senator in col.find({"party": party}):
         pprint(senator)
@@ -36,4 +43,12 @@ def findByAge(age):
         if senAge > age:
             pprint(senator)
 
-findByAge(50)
+def findByRank(rank):
+    for senator in senators.find({"senator_rank": rank}):
+        pprint(senator)
+
+#findByName("Lamar Alexander")
+#findByGender("male")
+#findParty("Republican")
+#findByAge(50)
+findByRank("junior")
