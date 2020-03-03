@@ -14,6 +14,15 @@ client = MongoClient()
 db = client.stickySulphur
 senators = db.senators
 
+def findByName(name):
+    if " " not in name:
+        return("full name required")
+    else:
+        fname = name[:name.find(" ")]
+        lname = name[name.find(" ")+1:]
+    for senator in col.find({"person.firstname": fname, "person.lastname": lname}):
+        pprint(senator)
+
 def findByAge(age):
     now = datetime.datetime.now()
     for senator in senators.find({}):
