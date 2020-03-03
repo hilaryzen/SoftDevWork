@@ -7,12 +7,20 @@
 from pymongo import MongoClient
 from pprint import pprint
 import datetime
+from dateutil.relativedelta import relativedelta
 import json
 
 client = MongoClient()
 db = client.stickySulphur
-col = db.senators
+senators = db.senators
 
-def findByBorough(borough):
-        for restaurant in restaurants.find({"borough": borough}):
-                print(restaurant["name"])
+def findByAge(age):
+    now = datetime.datetime.now()
+    for senator in senators.find({}):
+        birthdayNumbers = senator["person"]["birthday"].split("-")
+        birthday = datetime.datetime(int(birthdayNumbers[0]), int(birthdayNumbers[1]), int(birthdayNumbers[2]))
+        senAge = relativedelta(now, birthday).years
+        if senAge > age:
+            pprint(senator)
+
+findByAge(50)
