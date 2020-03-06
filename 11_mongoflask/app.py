@@ -6,7 +6,10 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def hello_world():
-    return render_template("home.html")
+    fname = "Lamar"
+    lname = "Alexander"
+    senator = mongo.db.senators.find({"person.firstname": fname, "person.lastname": lname})
+    return render_template("home.html", result = senator["description"])
 
 if __name__ == "__main__":
     app.debug = True
