@@ -8,6 +8,7 @@ mongo = PyMongo(app)
 def hello_world():
     fname = "Lamar"
     lname = "Alexander"
+    # find_one returns a dict instead of a cursor object
     senator = mongo.db.senators.find_one({"person.firstname": fname, "person.lastname": lname})
     return render_template("home.html", result = senator["description"])
 
