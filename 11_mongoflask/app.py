@@ -8,7 +8,7 @@ mongo = PyMongo(app)
 def hello_world():
     fname = "Lamar"
     lname = "Alexander"
-    senator = mongo.db.senators.find({"person.firstname": fname, "person.lastname": lname})
+    senator = mongo.db.senators.find_one({"person.firstname": fname, "person.lastname": lname})
     return render_template("home.html", result = senator["description"])
 
 if __name__ == "__main__":
