@@ -20,10 +20,9 @@ def findByName(name):
     else:
         fname = name[:name.find(" ")]
         lname = name[name.find(" ")+1:]
-    for senator in col.find({"person.firstname": fname, "person.lastname": lname}):
-        pprint(senator)
+    return senators.find({"person.firstname": fname, "person.lastname": lname})
 
-def findByGender(gender: str):
+def findByGender(gender):
 	if gender is not "male" and gender is not "female":
 		pprint("please enter a valid gender")
 	else:

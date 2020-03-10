@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_pymongo import PyMongo
 import methods
 app = Flask(__name__)
@@ -11,11 +11,9 @@ def hello_world():
 
 @app.route("/name")
 def name():
-    fname = "Lamar"
-    lname = "Alexander"
-    # find_one returns a dict instead of a cursor object
-    senator = mongo.db.senators.find_one({"person.firstname": fname, "person.lastname": lname})
-    return render_template("results.html")
+    name = request.args['name']
+    result = methods.findByName(name)
+    return render_template("results.html", result = result)
 
 if __name__ == "__main__":
     app.debug = True

@@ -5,6 +5,9 @@
   </head>
   <body>
     <h1>Current US Senators</h1>
-    {{ result }}
+    {% for r in result %}
+    {{ r.get("person").get("name") }}<br>
+    Party: {{ r.get("party") }}
+    {% endfor %}
   </body>
 </html>
