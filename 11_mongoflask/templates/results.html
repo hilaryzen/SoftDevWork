@@ -7,7 +7,10 @@
     <h1>Current US Senators</h1>
     {% for r in result %}
     {{ r.get("person").get("name") }}<br>
-    Party: {{ r.get("party") }}
+    Party: {{ r.get("party") }}<br>
+    Gender: {{ r.get("person").get("gender_label") }}<br>
+    Start Date: {{ r.get("startdate") }}<br>
+    End Date: {{ r.get("enddate") }}<br>
     {% endfor %}
   </body>
 </html>
