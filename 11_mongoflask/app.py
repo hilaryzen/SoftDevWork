@@ -15,6 +15,24 @@ def name():
     result = methods.findByName(name)
     return render_template("results.html", result = result)
 
+@app.route("/gender")
+def gender():
+    name = request.args['gender']
+    result = methods.findByGender(name)
+    return render_template("results.html", result = result)
+
+@app.route("/party")
+def party():
+    name = request.args['party']
+    result = methods.findByParty(name)
+    return render_template("results.html", result = result)
+
+@app.route("/rank")
+def rank():
+    name = request.args['rank']
+    result = methods.findByRank(name)
+    return render_template("results.html", result = result)
+
 if __name__ == "__main__":
     app.debug = True
     app.run()
