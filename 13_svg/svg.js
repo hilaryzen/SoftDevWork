@@ -20,9 +20,8 @@ var draw = function(e) {
     // draw new Circle
     c.setAttribute("cx",x);
     c.setAttribute("cy", y);
-    c.setAttribute("r", "10");
+    c.setAttribute("r", "20");
     c.setAttribute("fill", "blue");
-    //c.setAttribute("stroke","black");
     pic.appendChild(c);
 
 };
