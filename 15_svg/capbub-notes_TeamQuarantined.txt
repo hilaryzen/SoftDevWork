@@ -1,0 +1,35 @@
+1
+Predictions:
+- The user will be alerted in some way by pressing on a Name
+
+Observations:
+- When clicking on a name, you get a pop up saying this page says 'name'
+- nothing else happens unless you click the 6 names
+
+2
+Predictions:
+- There will  be 3 pop ups instead of one because there are 3 events for clicky now.
+- unsure of what they will display though
+
+Observations:
+- there are 3 consecutive pop ups after one click.
+- first one shows name, second shows row, third shows all.
+
+3
+Predictions:
+- The order they will show is the name (td) row (tr) then everything (body)
+- stopPropagation will stop td and tr from giving alerts.
+
+Observations:
+- Order that they showed was body, td, then tr.
+- Stop propagation stops td and tr.
+
+4
+Predictions:
+-Stop propagation will stop td and tr from giving alerts
+-I don't think the events listed ordered will not matter.
+-there will be 3 pop ups with the same order as before.
+
+Observations:
+-The order does not matter.
+-Not putting stop propagation makes the order the same as before.
