@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All About Python Pandas</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div id="title">
+    <h1>All About Python Pandas</h1>
+    <h4>Hilary Zen</h4>
+  </div>
+  <div id="section-links">
+    <a href="#why">Why Use Pandas?</a><br>
+    <a href="#install">Installing Pandas</a><br>
+    <a href="#series">Series</a><br>
+    <a href="#dataframes">Dataframes</a><br>
+    <a href="#add">Adding Data to DataFrames</a><br>
+    <a href="#read">Reading Data into Pandas</a><br>
+    <a href="#filter">Filtering DataFrames</a><br>
+    <a href="#clean">Data Cleaning</a><br>
+    <a href="#statistics">Functions for Statistics</a><br>
+    <a href="#loops">Iterations for DataFrames</a><br>
+  </div>
+
+  <div id="why">
+    <h2>Why Use Pandas?</h2>
+    <p>Python Pandas is a very popular library used for data manipulation and analysis. It takes data and creates a Python object with rows and columns that is much easier to work with, compared to 2D arrays or dictionaries.</p>
+    <p>Its advantages include:</p>
+    <ul>
+      <li>Better data representation, through data structures that resemble familiar spreadsheets</li>
+      <li>Efficient for large datasets</li>
+      <li>Good at handling messy data</li>
+      <li>Easy to read and output data from various sources</li>
+      <li>Built-in methods for analysis</li>
+      <li>Easy to incorporate into Flask applications</li>
+      <li>Gives access to more advanced features, like 3D graphs and plots</li>
+    </ul>
+  </div>
+
+  <div id="install">
+    <h2>Installing Pandas</h2>
+    <p>After successfully installing Python and Pip on your computer, you can run <b>pip install pandas</b> in the terminal to get the Pandas packages.</p>
+    <p>To start using Pandas in your code, add the line <b>import pandas as pd</b> at the top of your file.</p>
+  </div>
+
+  <div id="series">
+    <h2>Series</h2>
+    <p>A Series is a one-dimensional labeled array that stores data and matching index values, like a regular dictionary. Here, the indexes are the "keys" and the dataset makes up the "values".</p>
+    <img src="img/series1.png" height="40"/>
+    <p>The line of code above creates a Series with the data you pass in, which can be a dictionary, array, or even a value. The index is the list of axis values to match your data, and is optional.</p>
+    <p>The code block below shows two different ways of creating the same Series, which is shown on the right.</p>
+    <img src="img/series2.png" height="100"/>
+    <img src="img/series3.png" height="100"/>
+
+    <p>If you don't provide an index, Python will automatically assign one starting from 0.</p>
+    <img src="img/series4.png" height="30"/><br>
+    <img src="img/series5.png" height="100"/>
+
+    <p>You can populate an entire Series with one value, but you will need to provide an index to determine its length.</p>
+    <img src="img/series6.png" height="30"/><br>
+    <img src="img/series7.png" height="80"/>
+
+    <p>In addition, you can splice them, get certain rows by key or value, and perform operations on them.</p>
+    <table>
+      <tr>
+        <td>
+          <img src="img/series8.png" height="30"/><br>
+          <img src="img/series9.png" height="60"/>
+        </td>
+        <td>
+          <img src="img/series10.png" height="30"/><br>
+          <img src="img/series11.png" height="80"/>
+        </td>
+        <td>
+          <img src="img/series12.png" height="30"/><br>
+          <img src="img/series13.png" height="40"/>
+        </td>
+        <td>
+          <img src="img/series14.png" height="30"/><br>
+          <img src="img/series15.png" height="100"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="dataframes">
+    <h2>Dataframes</h2>
+    <p>A DataFrame is a 2D labeled data structure. In addition to data, you can also pass row labels and column labels as the index and columns arguments.</p>
+    <p>The three code blocks below all produce the same DataFrame, shown at the bottom.</p>
+    <img src="img/dataframe1.png" height="80"/><br>
+    <img src="img/dataframe2.png" height="60"/><br>
+    <img src="img/dataframe3.png" height="100"/><br>
+    <img src="img/dataframe4.png" height="80"/>
+
+    <p>Python Pandas handles messy data extremely well. If you pass in two Series with different lengths, empty cells will be automatically assigned NaN (Not A Number).</p>
+    <img src="img/dataframe5.png" height="80"/>
+    <img src="img/dataframe6.png" height="80"/>
+
+    <p>When creating the dataframe, you can easily choose and reorder the rows and columns you want to display, by passing in an array of labels to the index and columns arguments. As the first example shows, we can even choose to display rows that aren't in the DataFrame yet.</p>
+    <img src="img/dataframe7.png" height="80"/>
+    <img src="img/dataframe8.png" height="80"/><br>
+    <img src="img/dataframe9.png" height="100"/>
+    <img src="img/dataframe10.png" height="100"/>
+
+  </div>
+
+  <div id="add">
+    <h2>Adding Data to DataFrames</h2>
+
+    <h3>Columns</h3>
+    <p>DataFrames make it very easy to manipulate columns. In the code below, we create a new DataFrame and can choose one of its columns.</p>
+    <img src="img/dataframe11.png" height="120"/>
+    <img src="img/dataframe14.png" height="120"/>
+
+    <p>We can also create new columns through mathematical operations, as we do for 'three' in the code below, or through booleans.</p>
+    <img src="img/dataframe12.png" height="80"/><br>
+    <img src="img/dataframe15.png" height="100"/>
+
+    <p>Lastly, we can delete columns by using del or the method .pop(), as shown below.</p>
+    <img src="img/dataframe13.png" height="80"/><br>
+    <img src="img/dataframe16.png" height="100"/>
+
+    <h3>Rows</h3>
+    <p>Pandas allows you to do similar things with the rows of a DataFrame. Below is a code snippet and the Dataframe that is produced.</p>
+    <img src="img/dataframe17.png" height="160"/>
+    <img src="img/dataframe18.png" height="120"/>
+
+    <p>The loc method allows you to find rows based on the index they have. In the code above, df.loc['b'] returns the row labeled with b, as shown below with the column names on the left and the values on the right..</p>
+    <img src="img/dataframe19.png" height="80"/>
+
+    <p>The iloc method allows you to select rows as if they were items in an array, using an index that starts from 0. Thus, df.iloc[2] selects the third row in the dataframe (the first row corresponds to index 0, and the second row corresponds to index 1).</p>
+    <img src="img/dataframe20.png" height="80"/>
+
+    <h3>Adding New Rows</h3>
+    <p>In the code below, we create a dataframe with the columns out of order. The result is shown to the right of the code.</p>
+    <img src="img/dataframe21.png" height="150"/>
+    <img src="img/dataframe22.png" height="120"/>
+    <p>However, we can reorder the columns using an array, which we do with df[['one', 'two', 'four']]. The new DataFrame is below.</p>
+    <img src="img/dataframe23.png" height="120"/>
+
+    <p>Adding or changing data is a very important part of working with dataframes. The code below explores several ways we can do this.</p>
+    <img src="img/dataframe24.png" height="140"/>
+    <p>In the first line, we add a completely new row, g, and pass in the new values through an array. In the third line, we use the iloc method to replace the values in the first row of the dataframe with 10, 11, and 12. Both changes are shown in the dataframe below.</p>
+    <img src="img/dataframe25.png" height="140"/>
+    <p>In the fifth line, we create a different dataframe using the append method. Instead of an array, we pass in a dictionary with the columns as the keys and their corresponding data as the value. However, we must use ignore_index = True, which disregards the a to g index we have already established. Instead, it is replaced by the default index, which starts from 0.</p>
+    <img src="img/dataframe26.png" height="160"/>
+
+    <h3>Combining DataFrames</h3>
+    <p>Below are two dataframes, with the exact same row indexes and columns, but different values.</p>
+    <img src="img/dataframe27.png" height="120"/>
+    <img src="img/dataframe28.png" height="120"/>
+
+    <p>If we call the left one df and the right one df2, we can use the <b>df.append(df2)</b> method to add the rows of the second dataframe to the end of the first one.</p>
+    <img src="img/dataframe29.png" height="220"/>
+
+    <p>If we want to add the columns instead, we can use <b>pd.concat([df, df2], axis=1)</b> instead.</p>
+    <img src="img/dataframe30.png" height="120"/>
+  </div>
+
+  <div id="read">
+    <h2>Reading Data Into Pandas</h2>
+    <p>Pandas makes reading data from a CSV very easy. Suppose you have the below data, with column names at the top and three rows of data.</p>
+    <img src="img/read1.png" height="100"/>
+    <p>In the code below, we use the read_csv method to create a new dataframe.</p>
+    <img src="img/read2.png" height="50"/>
+    <p>When we print that df, we see that the first row of the CSV has been turned into the column indexes. The rows are labeled with the default index, starting from 0.</p>
+    <img src="img/read3.png" height="80"/>
+
+    <p>After reading in the data, we can change it and use the to_csv method. In the new CSV on the right, we can see that the column names are still on the first line, and the row indexes have been added.</p>
+    <img src="img/read4.png" height="80"/>
+    <img src="img/read5.png" height="100"/>
+
+    <p>Using SQL databases is not much harder. After setting up a connection, the method read_sql_query allows you to recreate the table as a dataframe.</p>
+    <img src="img/read6.png" height="100"/>
+    <img src="img/read7.png" height="80"/>
+
+    <p>After working with the dataframe, to_sql allows you to output the dataframe back into the SQL database.</p>
+    <img src="img/read8.png" height="60"/>
+    <img src="img/read9.png" height="80"/>
+  </div>
+
+  <div id="filter">
+    <h2>Filtering Dataframes</h2>
+    <p>In the code below, we first create a dataframe, which is shown to the right.</p>
+    <img src="img/filter1.png" height="200"/>
+    <img src="img/filter2.png" height="120"/>
+
+    <p>The filtered dataframe is created by selecting all the rows which have values greater than 8 under 'two' column. We can do this by using a boolean expression inside the brackets of df[], which creates a new dataframe with the rows that fit the criteria of df['two'] >= 8.</p>
+    <img src="img/filter3.png" height="80"/>
+
+    <p>We can also combine multiple conditions, as shown as the bottom of the code. For the boolean dataframe, we select all the rows with an even value under the 'two' column and a 'three' value that is greater than 12. This removes row d.</p>
+    <img src="img/filter4.png" height="60"/>
+  </div>
+
+  <div id="clean">
+    <h2>Data Cleaning</h2>
+    <p>In the code below, we start with a very messy dataset, resulting in many NaN throughout the dataframe.</p>
+    <img src="img/clean1.png" height="120"/>
+    <img src="img/clean2.png" height="120"/>
+
+    <p>We can check which values in a dataframe with the isnull() method, which replaces every value with True, if they are NaN, or False. The notnull() method does the opposite. In addition, we can use dropna() to get rid of any rows that contain a NaN, or add axis=1 as an argument to remove of columns instead. If we want to replace all the NaN values instead, usually with 0, we use the fillna method.</p>
+    <table>
+      <tr>
+        <td>
+          <img src="img/clean3.png" height="30"/><br>
+          <img src="img/clean4.png" height="120"/>
+        </td>
+        <td>
+          <img src="img/clean5.png" height="30"/><br>
+          <img src="img/clean6.png" height="60"/>
+        </td>
+        <td>
+          <img src="img/clean7.png" height="30"/><br>
+          <img src="img/clean8.png" height="120"/>
+        </td>
+        <td>
+          <img src="img/clean9.png" height="30"/><br>
+          <img src="img/clean10.png" height="120"/>
+        </td>
+      </tr>
+    </table>
+
+    <p>The replace method allows us to change all instances of a specific value. In the first example, all values in row c, which were previously 3, are now 8. If we pass in arrays of values as arguments to the method, we can replace several values at the same time. In the second example, all the 3s become 8, all the 4s become 9, and all the 5s become 10.</p>
+    <table>
+      <tr>
+        <td>
+          <img src="img/clean11.png" height="30"/><br>
+          <img src="img/clean12.png" height="120"/>
+        </td>
+        <td>
+          <img src="img/clean13.png" height="30"/><br>
+          <img src="img/clean14.png" height="120"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="statistics">
+    <h2>Functions for Statistics</h2>
+    <p>Pandas contains many basic math functions, which makes it very helpful for data analysis. Below is the original dataframe created by the code snippet.</p>
+    <img src="img/stat1.png" height="150"/>
+    <img src="img/stat2.png" height="120"/>
+    <p>By default, they operate on columns, as shown as the output on the left, which lists the mean of values for each column. However, by adding 1 as an argument to the mean function, we can get the average for each row instead as shown on the right.</p>
+    <img src="img/stat3.png" height="80"/>
+    <img src="img/stat4.png" height="120"/>
+  </div>
+
+  <div id="loops">
+    <h2>Iterations for DataFrames</h2>
+    <p>To iterate over a dataframe, the basic for loop is not effective. As shown below, looping over the dataframe only gives you the column names.</p>
+    <table>
+      <tr>
+        <td>
+          <img src="img/iter1.png" height="120"/>
+        </td>
+        <td>
+          <img src="img/iter2.png" height="60"/><br>
+          <img src="img/iter3.png" height="60"/>
+        </td>
+      </tr>
+    </table>
+
+    <p>To get each column of the dataframe, we must iterate over df.items(). There are two variables, col and ser. Col represents the column name, and ser is a series that contains the values of the column. The indexes of this series are the row names. The same applies if we want each row of the dataframe, except that we use df.iterrows() instead.</p>
+    <table>
+      <tr>
+        <td>
+          <img src="img/iter4.png" height="80"/><br>
+          <img src="img/iter5.png" height="350"/>
+        </td>
+        <td>
+          <img src="img/iter6.png" height="80"/><br>
+          <img src="img/iter7.png" height="250"/>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
